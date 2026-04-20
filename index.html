@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="de" data-theme="workhub">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Viewport Breakpoints — Übersicht</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/themes.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body>
+<div class="wrap">
+
+  <!-- THEME SWITCHER -->
+  <div class="theme-bar">
+    <span class="ts-label">Theme</span>
+    <div class="theme-switch" role="tablist" id="themeSwitch">
+      <button class="theme-btn active" data-t="workhub"><span class="sw" style="background:#00e5ff"></span>WorkHub</button>
+      <button class="theme-btn" data-t="glass"><span class="sw" style="background:linear-gradient(135deg,#ff4d8d,#4d7dff)"></span>Glassmorphism</button>
+      <button class="theme-btn" data-t="neon"><span class="sw" style="background:#ff00ff;box-shadow:0 0 8px #ff00ff"></span>Neon Glow</button>
+      <button class="theme-btn" data-t="gradient"><span class="sw" style="background:linear-gradient(135deg,#ff8fcf,#c77dff,#6c8eff)"></span>Glow Gradient</button>
+      <button class="theme-btn" data-t="minimal"><span class="sw" style="background:#9a9a9a"></span>Minimal Dark</button>
+    </div>
+  </div>
+
+  <header>
+    <p class="kicker">Responsive Reference</p>
+    <h1>Viewport Breakpoints</h1>
+    <p class="sub">Material Width Classes und typische Mobile-Breiten als visuelle Übersicht. Der Marker zeigt live deine aktuelle Fensterbreite, den Slider kannst du zum Simulieren beliebiger Breiten verwenden.</p>
+  </header>
+
+  <!-- LIVE PANEL -->
+  <div class="live">
+    <div class="live-width">
+      <span class="num" id="liveNum">—</span>
+      <span class="unit">px</span>
+    </div>
+    <div class="live-meta">
+      <span class="label">Aktuelle Width Class</span>
+      <span class="class-pill"><span class="dot" id="classDot"></span><span id="classLabel">—</span></span>
+      <span class="hint" id="classHint">&nbsp;</span>
+    </div>
+    <label class="live-toggle">
+      <input type="checkbox" id="followLive" checked>
+      Live folgen
+    </label>
+  </div>
+
+  <!-- MATERIAL WIDTH CLASSES -->
+  <section>
+    <div class="sec-head">
+      <h2>Material Width Classes</h2>
+      <span class="hint">0 → 2000+ px · logarithmische Skala</span>
+    </div>
+    <div class="scale-card">
+      <div class="scale" id="scale">
+        <div class="zone compact"  data-min="0"    data-max="600"  style="flex:0 0 0">
+          <span class="z-name">Compact</span><span class="z-range">0–599</span>
+        </div>
+        <div class="zone medium"   data-min="600"  data-max="840"  style="flex:0 0 0">
+          <span class="z-name">Medium</span><span class="z-range">600–839</span>
+        </div>
+        <div class="zone expanded" data-min="840"  data-max="1200" style="flex:0 0 0">
+          <span class="z-name">Expanded</span><span class="z-range">840–1199</span>
+        </div>
+        <div class="zone large"    data-min="1200" data-max="1600" style="flex:0 0 0">
+          <span class="z-name">Large</span><span class="z-range">1200–1599</span>
+        </div>
+        <div class="zone xlarge"   data-min="1600" data-max="2400" style="flex:0 0 0">
+          <span class="z-name">X-Large</span><span class="z-range">1600+</span>
+        </div>
+        <div class="marker" id="marker"><span class="label" id="markerLabel">0 px</span></div>
+      </div>
+      <div class="ticks" id="ticks"></div>
+
+      <div class="slider-row">
+        <span class="label">Simulation</span>
+        <input type="range" id="slider" min="280" max="2000" step="1" value="375">
+        <span class="val" id="sliderVal">375 px</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE DETAIL -->
+  <section>
+    <div class="sec-head">
+      <h2>Mobile Viewports</h2>
+      <span class="hint">320 → 430 px · Compact Width</span>
+    </div>
+    <div class="scale-card">
+      <div class="phones" id="phones">
+        <div class="bar"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TABLE CARDS -->
+  <section>
+    <div class="sec-head">
+      <h2>Zonen im Detail</h2>
+      <span class="hint">Layout-Empfehlung pro Width Class</span>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="swatch sw-compact"></div>
+        <div>
+          <div class="title t-compact">Compact</div>
+          <div class="range">0 – 599 px</div>
+          <div class="desc">Alle Handys im Hoch- und oft auch Querformat. Ein-Spalten-Layout, Bottom-Nav, volle Breite für Listen und Karten.</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="swatch sw-medium"></div>
+        <div>
+          <div class="title t-medium">Medium</div>
+          <div class="range">600 – 839 px</div>
+          <div class="desc">Kleine Tablets, Foldables, breitere Phones im Querformat. Großzügiges 1-Pane- oder einfaches 2-Pane-Layout möglich.</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="swatch sw-expanded"></div>
+        <div>
+          <div class="title t-expanded">Expanded</div>
+          <div class="range">840 – 1199 px</div>
+          <div class="desc">Große Tablets, Landscape. Klare Mehrspalten-Layouts, Sidebar + Content, typische Dashboard-Breite.</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="swatch sw-large"></div>
+        <div>
+          <div class="title t-large">Large</div>
+          <div class="range">1200 – 1599 px</div>
+          <div class="desc">Kleine Desktopfenster, große Tablets im Landscape. Volle Multi-Pane-Layouts mit Sidebar, Content und Detail-Panel.</div>
+        </div>
+      </div>
+      <div class="card" style="grid-column:1/-1">
+        <div class="swatch sw-xlarge"></div>
+        <div>
+          <div class="title t-xlarge">Extra-Large</div>
+          <div class="range">1600+ px</div>
+          <div class="desc">Große Desktopflächen. Maximale Spaltenanzahl, Max-Width für Lesbarkeit setzen, generöser Whitespace.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>WorkHub · Viewport Reference · 5 Themes</footer>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+/* =========================================================
+   BASIS-VARIABLEN (WORKHUB / DEFAULT)
+   ========================================================= */
+:root{
+  --bg:#060709;
+  --bg-image:none;
+  --surface:#0d0f14;
+  --surface-2:#141821;
+  --surface-bd:1px solid var(--border);
+  --surface-shadow:none;
+  --surface-backdrop:none;
+  --border:#1e2432;
+  --border-soft:#1e2432;
+  --text:#e6e9ef;
+  --text-dim:#8a92a5;
+  --text-mute:#5b6374;
+  --accent:#00e5ff;
+  --accent-text:#001015;
+  --accent-glow:0 0 12px var(--accent);
+  --accent-glow-strong:0 0 14px var(--accent);
+
+  --c-compact:#ff5a7a;
+  --c-medium:#ffb547;
+  --c-expanded:#4ade80;
+  --c-large:#3b82f6;
+  --c-xlarge:#a855f7;
+
+  --zone-active-filter:brightness(1.35) saturate(1.2);
+  --zone-inactive-filter:brightness(0.6) saturate(0.8);
+
+  --r:10px;
+  --ui:"DM Sans",system-ui,-apple-system,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  --display:"DM Sans",system-ui,sans-serif;
+}
+
+/* =========================================================
+   BASIS-STYLES
+   ========================================================= */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:var(--ui);-webkit-font-smoothing:antialiased}
+body{
+  padding:24px 16px 64px;min-height:100vh;
+  background-image:var(--bg-image);
+  background-attachment:fixed;
+  transition:background .6s ease;
+}
+
+.live, .scale-card, .card, .class-pill, .zone, .scale, .theme-switch{
+  transition:background .35s ease, border-color .35s ease, box-shadow .35s ease, color .35s ease;
+}
+
+.wrap{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+
+footer{margin-top:32px;padding-top:20px;border-top:1px solid var(--border-soft);font-family:var(--mono);font-size:11px;color:var(--text-mute);text-align:center;letter-spacing:.04em}
